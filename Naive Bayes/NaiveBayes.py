@@ -25,7 +25,7 @@ class NaiveBayes:
         # calculate posterior probability for each class
         for idx, c in enumerate(self._classes):
             prior = np.log(self._priors[idx])
-            posterior = np.sum(np.log(self._pdf(idx, x)))
+            posterior = np.sum(np.log(self._pdf(idx, x)+ 1e-9))
             posterior = posterior + prior
             posteriors.append(posterior)
 
